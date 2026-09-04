@@ -1,0 +1,19 @@
+name = "walica-togo-system"
+main = "src/index.ts"
+compatibility_date = "2026-09-04"
+
+[observability]
+enabled = true
+
+[vars]
+APP_TZ = "Asia/Tokyo"
+LOG_LEVEL = "info"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "walica_togo_db"
+database_id = "d2b50631-abe1-4b5d-85ec-8905102eafe8"
+migrations_dir = "db/migrations"
+
+[triggers]
+crons = ["* * * * *"]

@@ -1,0 +1,23 @@
+{
+  "name": "walica-togo-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Walicaトゴシステム (MVP) for Discord/LINE on Cloudflare Workers",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "bot:discord": "node ./bot/discord-gateway-bot.mjs",
+    "d1:migrate:local": "wrangler d1 execute walica_togo_db --local --file ./db/schema.sql",
+    "d1:migrate:remote": "wrangler d1 execute walica_togo_db --remote --file ./db/schema.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260904.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.129.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "zod": "^4.1.8"
+  }
+}
